@@ -17,6 +17,9 @@
 		@media (max-width: em(1055)){
 			 flex:0 0 30% 
 		}
+		@media (max-width:769px){
+			 justify-content: center; 
+		}
 	}
 
 	&__right {
@@ -30,12 +33,19 @@
 		padding-bottom: 13.28%;
 		position: relative;
 		z-index: 5;
+		@media (max-width: 769px){
+			 flex: 0 0 80.23%;
+			 padding-bottom: 24.85%;
+		}
 	}
 
 	&__menu {
 		display: flex;
 		align-items: center;
 		flex: 1 0 auto;
+		@media (max-width:$mobile){
+			 position: absolute;
+		}
 	}
 
 	&__contacts {
@@ -47,12 +57,14 @@
 	&__phone-logo {
 		position: relative;
 		z-index: 5;
-		@media (min-width:$mobile){
+	@media (min-width:769px){
+			
 			 img {
 				display: none;
 			 } 
 		}
-		@media (max-width:$mobile){
+		@media (max-width:769px){
+			padding: 9px 22px;
 			 p {
 				display: none;
 			 } 
