@@ -1,3 +1,95 @@
-//====================================================================================================
+//======CREATING==============================================================================================
+.page {
+
+	&__creating {
+		// background: url('@img/main/bg-circkle.png') 104% 50%  no-repeat,
+		// url('@img/main/bg1.jpg') 114% 0% /contain no-repeat;
+		display: flex;
+		
+	}
+}
+.creating {
+
+	&__bg{
+		//flex: 0 0 calc(100% - percent(653,1160));
+		// flex: 0 0 percent(653,1160);
+		//  background: url('@img/main/bg-circkle.png') 104% 50%  no-repeat,
+		//  url('@img/main/bg1.jpg') 114% 0% /contain no-repeat;
+	}
+	&__container {
+		
+	}
+
+	&__title {
+		margin-top: 20px;
+		@include adaptiveValue("padding-top", 70, 34,1160,360,1);
+		font-weight: 700;
+		@include adaptiveValue("font-size", 36, 18,1160,360,1);
+		line-height: math.div(44 , 36);
+		@media (max-width:$mobile){
+			 line-height: math.div(22 , 18); 
+		}
+		span {
+			color: $mainViolet;
+		}
+		br {
+			@media (max-width:$mobile){
+				 display: none; 
+			}
+		}
+	}
+
+	&__text {
+
+		&_one {
+			@include adaptiveValue("margin-top", 33, 21,1160,768,1);
+			@include adaptiveValue("font-size", 16, 12,1160,360,1);
+			line-height: math.div(20 , 16);
+			@media (max-width:$mobile){
+			 line-height: math.div(15 , 12);
+			}
+			span {
+				color: $mainViolet;
+			}
+		}
+
+		&_two {
+			font-weight: 600;
+			padding-right: 680px;
+			@include adaptiveValue("margin-top", 20, 10,1160,768,1);
+			@include adaptiveValue("font-size", 14, 12,1160,360,1);
+			line-height: math.div(19 , 14);
+			@media (max-width:$mobile){
+			 line-height: math.div(16 , 12);
+			 font-weight: 500;
+			}
+			@media (max-width:$mobileSmall){
+				 text-align: center; 
+			}
+			span {
+				color: $mainViolet;
+			}
+	}
+
+	
+		
+	}
+
+	&__button {
+		margin-top: 116px;
+			@media (max-width:$mobile){
+				 margin-top: 50px; 
+			}
+			padding-left: 78px;
+		padding-right: 78px;
+		}
+
+	&__arow {
+		display: block;
+		margin: 80px auto 0 auto;
+	}
+}
+.button {
+}
 
 //====================================================================================================
