@@ -1,28 +1,45 @@
 //======CREATING==============================================================================================
 .page {
-
+	position: relative;
+	&::after{
+		content:'';
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 1440px;
+		z-index: -1;
+		transform: translateX(-50%);
+		height: 100%;
+		@media (min-width:$mobile){
+			background: url('@img/main/fotor_2023-5-10_9_18_17.jpg') 90% 7% no-repeat; 
+		}
+	}
+	
 	&__creating {
-		// background: url('@img/main/bg-circkle.png') 104% 50%  no-repeat,
-		// url('@img/main/bg1.jpg') 114% 0% /contain no-repeat;
-		display: flex;
 		
+		
+		position: relative;
 	}
 }
 .creating {
 
 	&__bg{
-		//flex: 0 0 calc(100% - percent(653,1160));
-		// flex: 0 0 percent(653,1160);
-		//  background: url('@img/main/bg-circkle.png') 104% 50%  no-repeat,
-		//  url('@img/main/bg1.jpg') 114% 0% /contain no-repeat;
+		@media (max-width:$mobile){
+			position: absolute;
+			top: 2%;
+			z-index: -1;
+			padding-bottom: 100%;
+			width: 100%; 
+		}
+		
 	}
 	&__container {
 		
 	}
 
 	&__title {
-		margin-top: 20px;
-		@include adaptiveValue("padding-top", 70, 34,1160,360,1);
+		//margin-top: 20px;
+		@include adaptiveValue("padding-top", 90, 34,1160,360,1);
 		font-weight: 700;
 		@include adaptiveValue("font-size", 36, 18,1160,360,1);
 		line-height: math.div(44 , 36);
@@ -47,6 +64,7 @@
 			line-height: math.div(20 , 16);
 			@media (max-width:$mobile){
 			 line-height: math.div(15 , 12);
+			 margin-top: 75%;
 			}
 			span {
 				color: $mainViolet;
@@ -55,16 +73,18 @@
 
 		&_two {
 			font-weight: 600;
-			padding-right: 680px;
+			@include adaptiveValue("padding-right", 680,450,1160,768,1);
 			@include adaptiveValue("margin-top", 20, 10,1160,768,1);
 			@include adaptiveValue("font-size", 14, 12,1160,360,1);
 			line-height: math.div(19 , 14);
 			@media (max-width:$mobile){
 			 line-height: math.div(16 , 12);
 			 font-weight: 500;
+			 padding-right: 0;
+			 text-align: center; 
 			}
 			@media (max-width:$mobileSmall){
-				 text-align: center; 
+				 
 			}
 			span {
 				color: $mainViolet;
@@ -77,19 +97,331 @@
 
 	&__button {
 		margin-top: 116px;
-			@media (max-width:$mobile){
-				 margin-top: 50px; 
-			}
-			padding-left: 78px;
+		display: block;
+		padding-left: 78px;
 		padding-right: 78px;
+			@media (max-width:$mobile){
+				 //margin-top: 50px;
+				 //display: block;
+				 margin: 50px auto 0 auto
+				 
+			}
+		
 		}
 
 	&__arow {
 		display: block;
-		margin: 80px auto 0 auto;
+		margin: 7% auto 0 auto;
 	}
 }
 .button {
 }
 
-//====================================================================================================
+//==============ADVANTAGES======================================================================================
+
+.page {
+
+	&__advantages {
+	}
+}
+.advantages {
+
+	&__container {
+		@include adaptiveValue("margin-top", 75,54,1440, 360,1);
+	}
+
+	&__title {
+		font-weight: 800;
+		@include adaptiveValue("font-size", 36, 18,1440,360,1);
+		line-height: math.div(44 , 36);
+		span {
+			color: $mainViolet;
+		}
+	}
+
+	&__items {
+		@include adaptiveValue("margin-top", 50,30,1440, 360,1);
+		display: grid;
+		//grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+		row-gap: rem(50);
+		column-gap: rem(20); 
+		@media (max-width:$mobile){
+			 row-gap: rem(40);
+			 
+		}
+	}
+
+	&__item {
+		background: #FFFFFF;
+		box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+		border-radius: 10px;
+		padding: 16px;
+	}
+
+	&__button {
+		margin: 50px auto 0 auto;
+		display: block;
+		padding-left: 78px;
+		padding-right: 78px;
+	}
+}
+.item-advantage {
+
+	&__number {
+		font-weight: 700;
+		font-size: rem(64);
+		//line-height: math.div(78 , 64);
+		color: white;
+		text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: rem(14);
+		line-height: math.div(17 , 14);
+		position: relative;
+		display: inline-block;
+		&::after{
+			content:'';
+			position: absolute;
+			top: 130%;
+			left: 0;
+			width: 110%;
+			height: 2px;
+			background: #E37575;
+		}
+	}
+
+	&__text {
+		margin-top: 18px;
+		line-height: math.div(15 , 12);
+	}
+}
+
+
+//==============WHATGET======================================================================================
+
+.page {
+
+	&__whatget {
+	}
+}
+.whatget {
+
+	&__container {
+		margin-top: 100px;
+	}
+
+	&__title {
+		font-weight: 800;
+		@include adaptiveValue("font-size", 30, 18,1440,360,1);
+		line-height: math.div(22 , 18);
+		span {
+			color: $mainViolet;
+		}
+		margin-bottom: 30px;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+		@media (min-width:$mobileSmall){
+			&:nth-of-type(even) {
+				flex-direction: row-reverse;
+			} 
+		}
+		@media (max-width:$mobileSmall){
+			 flex-direction: column; 
+		}
+	}
+}
+.item-whatget {
+
+	&__img {
+		flex: 0 0 percent(521,1160);
+		padding-bottom: percent(355,1160);
+		@media (max-width:$mobileSmall){
+			flex: 0 0 100%;
+			width: 100%;
+			padding-bottom: percent(251,368);
+			margin-bottom: 20px;
+	  }
+	}
+
+	&__content {
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: rem(18);
+		line-height: math.div(22 , 18);
+		color: $mainViolet;
+		margin-bottom: 17px;
+	}
+
+	&__list {
+
+	}
+
+	&__item {
+		position: relative;
+		font-size: rem(14);
+		line-height: math.div(17 , 14);
+		//padding-left: 16px;
+		&:not(:last-child) {
+			margin-bottom: 8px;
+		}
+		&::before{
+			content:'';
+			
+			display: inline-block;
+			width: 9px;
+			height: 9px;
+			border-radius: 100%;
+			background: #2A2367;
+			margin-right: 8px;
+		}
+	}
+}
+
+//==============CERTIFICATE======================================================================================
+
+.page {
+
+	&__certificate {
+	}
+}
+.certificate {
+
+	&__container {
+		@include adaptiveValue("margin-top", 100, 50,1440,360,1);
+		@media (max-width:$mobile){
+			 padding-left: 6px;
+			 padding-right: 6px; 
+		}
+	}
+
+	&__color {
+		background: #F0D577;
+		border-radius: 10px;
+		padding: 26px 20px;
+		@media (max-width:$mobile){
+			  
+		}
+		
+	}
+
+	&__border {
+		display: flex;
+		align-items: center;
+		border: 1px solid #FFFFFF;
+		border-radius: 10px;
+		column-gap: 98px;
+		@media (max-width:$mobile){
+			flex-direction: column; 
+		}
+		@media (min-width:$mobile){
+			 padding-top: 26px;
+			 padding-bottom: 20px; 
+		}
+	}
+
+	&__gold {
+		flex: 0 0 percent(359,1160);
+		padding-bottom: percent(438,1160);
+		@media (max-width:$mobile){
+			margin: 43px 0px;
+			 //flex: 0 0 percent(185,768);
+			width: percent(185,713);
+			padding-bottom: percent(226,713);
+		}
+	}
+
+	&__slider {
+		//width: 40%;
+		@media (max-width:$mobile){
+			max-width: 100%; 
+	  }
+	}
+
+	&__swiper {
+		
+	}
+
+	&__slide {
+		 display: flex;
+			 flex-direction: column;
+			  align-items: center;
+		@media (max-width:$mobile){
+			
+			 //justify-content: center; 
+			
+		}
+		//width: 100% !important;
+		//transform: scale(0.5);
+		//justify-items: flex-start;
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: rem(12);
+		line-height: math.div(15 , 12);
+		color: #9F9F9F;
+		@media (min-width:$mobile){
+			 //display: block;
+			 //text-align: center; 
+		}
+	}
+
+	&__text {
+		margin-top: 8px;
+		margin-bottom: 14px;
+		font-weight: 700;
+		line-height: math.div(15 , 12);
+		text-align: center;
+		//flex: 1 0 auto;
+	}
+
+	&__img {
+		@media (max-width:$mobile){
+			 display: flex;
+			 justify-content: center;
+			 align-items: center;
+			 width: percent(429, 713);
+			 padding-bottom: percent(607,713);
+		}
+		
+	}
+
+	&__dots {
+		@media (max-width:$mobile){
+			 
+			 margin-top: 30px;
+			margin-bottom: 20px;
+			display: flex;
+			justify-content: center;
+			column-gap: 20px;
+			.swiper-pagination-bullet {
+				display: block;
+				width: 21px;
+				height: 15px;
+				background: #B8B8B8;
+				border-radius: 8px;
+				transition: all 0.5s;
+			}
+	
+			.swiper-pagination-bullet-active {
+				width: 40px;
+				background: #6B5AF9;
+			} 
+		}
+		@media (min-width:$mobile){
+			display: none; 
+		}
+	}
+}
